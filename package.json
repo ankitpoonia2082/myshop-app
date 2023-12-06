@@ -13,9 +13,9 @@
   "author": "Ankit Poonia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ankitpoonia2082/myshop-app/issues"
+    "url": "https://github.com/ankitpoonia2082/myshop-app"
   },
-  "homepage": "https://github.com/ankitpoonia2082/myshop-app#readme",
+  "homepage": "https://github.com/ankitpoonia2082/myshop-app",
   "dependencies": {
     "express": "^4.18.2",
     "mongodb": "^6.3.0",

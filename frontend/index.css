@@ -5,8 +5,9 @@
     box-sizing: border-box;
 }
 
-body ,#home-page{
-    background-color:rgb(41, 41, 41);
+body,
+#home-page {
+    background-color: rgb(41, 41, 41);
 }
 
 /* Login Form CSS Starts-------------------------> */
@@ -15,6 +16,7 @@ body ,#home-page{
     flex-direction: column;
     align-items: center;
 }
+
 .login-register button {
     width: 100px;
 }
@@ -38,11 +40,11 @@ body ,#home-page{
 
 .heading {
     text-align: center;
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(57, 57, 57);
     color: white;
     border-radius: 18px;
     padding: 7px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .login-form,
@@ -120,54 +122,62 @@ body ,#home-page{
 /* carousel Div Css Ends */
 
 /* Modal of login and register div Start  */
-#exampleModal{
+#exampleModal {
     z-index: 1000;
 }
+
 .modal-backdrop {
     /* Adjust or override the properties causing issues */
-    display: none; /* or other adjustments */
-  }
+    display: none;
+    /* or other adjustments */
+}
+
 /* Modal of login and register div End  */
 
 /* catagory-div CSS Started */
-.featured-content{
-    background-color: black;
+.featured-content {
     margin: 10px;
     padding: 10px;
     border: 1px solid gray;
     border-radius: 20px;
 }
-.catagory-div{
+
+.catagory-div {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
 }
-.catagory-div button{
+
+.catagory-div button {
+    background-color: transparent;
     margin: 20px auto;
-    border: 2px solid gray;
-    border-radius: 20px;
+    border: none;
+    /* border: 2px solid gray; */
+    /* border-radius: 30px; */
+    /* padding-top: 20px; */
 }
-.cat{
-    width: 250px;
-}
-.cat img{
+
+.cat img {
     object-fit: cover;
     max-width: 100%;
-    height:120px;
+    height: 120px;
 }
+
 /* catagory-div CSS Ended */
 
 /* All Products CSS Started------------------------------------- */
-.all-products{
+.all-products {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.card{
-    margin: 30px;
+
+.card {
+    margin: 10px;
     max-width: 600px;
 }
+
 /* .row{
     display: block;
 } */
@@ -197,6 +207,9 @@ body ,#home-page{
     .register-form {
         width: 100%;
         margin: 10px;
+    }
+    .card img {
+        width: 100%;
     }
 
 
