@@ -1,0 +1,204 @@
+/* Shop App CSS */
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body ,#home-page{
+    background-color:rgb(41, 41, 41);
+}
+
+/* Login Form CSS Starts-------------------------> */
+.login-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-register button {
+    width: 100px;
+}
+
+.tab-content,
+.nav {
+    margin: 10px;
+    width: 90%;
+    max-width: 550px;
+    padding: 20px;
+    display: block;
+    justify-content: space-around;
+    border-radius: 20px;
+}
+
+.login-main-container,
+.register-main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    text-align: center;
+    background-color: rgb(41, 41, 41);
+    color: white;
+    border-radius: 18px;
+    padding: 7px;
+    margin-bottom: 40px;
+}
+
+.login-form,
+.register-form {
+    background-color: black;
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.login-form form,
+.register-form label {
+    color: white;
+}
+
+/* Login/register Button */
+.btn-div {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Login Form CSS Ends-------------------------> */
+
+
+/* carousel Div Css Start --------------------------------->*/
+.custom-carousel {
+    /* position: relative; */
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.custom-carousel-inner {
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.custom-carousel-item {
+    flex: 0 0 100%;
+    width: 95%;
+    height: 50vh;
+}
+
+.custom-carousel-item img {
+    object-fit: cover;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.custom-carousel-control-prev,
+.custom-carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.custom-carousel-control-prev {
+    left: 10px;
+}
+
+.custom-carousel-control-next {
+    right: 10px;
+}
+
+/* carousel Div Css Ends */
+
+/* Modal of login and register div Start  */
+#exampleModal{
+    z-index: 1000;
+}
+.modal-backdrop {
+    /* Adjust or override the properties causing issues */
+    display: none; /* or other adjustments */
+  }
+/* Modal of login and register div End  */
+
+/* catagory-div CSS Started */
+.featured-content{
+    background-color: black;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+.catagory-div{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.catagory-div button{
+    margin: 20px auto;
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+.cat{
+    width: 250px;
+}
+.cat img{
+    object-fit: cover;
+    max-width: 100%;
+    height:120px;
+}
+/* catagory-div CSS Ended */
+
+/* All Products CSS Started------------------------------------- */
+.all-products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    margin: 30px;
+    max-width: 600px;
+}
+/* .row{
+    display: block;
+} */
+/* .col-lg-6{
+    display: flex;
+} */
+/* All Products CSS Ended------------------------------------- */
+
+
+
+/* Media Query CSS for 600px-------------------------------------- */
+
+@media screen and (max-width: 600px) {
+
+    /* Login Form media query */
+    .login-register {
+        margin: 10px;
+    }
+
+    .tab-content,
+    .nav {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .login-form,
+    .register-form {
+        width: 100%;
+        margin: 10px;
+    }
+
+
+
+}

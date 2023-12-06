@@ -1,0 +1,24 @@
+{
+  "name": "shop-app-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitpoonia2082/myshop-app.git"
+  },
+  "author": "Ankit Poonia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankitpoonia2082/myshop-app/issues"
+  },
+  "homepage": "https://github.com/ankitpoonia2082/myshop-app#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.2"
+  }
+}

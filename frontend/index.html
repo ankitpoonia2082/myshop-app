@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop App</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</head>
+
+<body id="home-page">
+    <div class="home-body">
+        <!-- Nav-bar Start -->
+        <div class="navigation-bar">
+            <nav class="navbar border-bottom px-2">
+                <div class="container-fluid me-auto">
+                    <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                            fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                            <path
+                                d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z" />
+                        </svg></a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search products"
+                                    aria-label="Search products" aria-describedby="button-addon2">
+                                <button class="btn btn-success" type="button" id="button-addon2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                        class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Login</button>
+
+                    <!-- Modal -->
+                    <div class="modal" id="exampleModal" data-bs-backdrop="static" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-2" id="exampleModalLabel">Login/Register<h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="login-register">
+                                        <ul class="nav nav-tabs bg-dark" id="myTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="btn btn-primary" id="home-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#home-tab-pane" type="button" role="tab"
+                                                    aria-controls="home-tab-pane" aria-selected="true">Login</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="btn btn-success" id="profile-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                                    aria-controls="profile-tab-pane"
+                                                    aria-selected="false">Register</button>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content bg-dark" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                                                aria-labelledby="home-tab" tabindex="0">
+                                                <!-- login-form -->
+                                                <div class="login-main-container">
+                                                    <div class="login-form">
+                                                        <div class="heading">
+                                                            <h2>Login</h2>
+                                                        </div>
+                                                        <form id="login-f">
+                                                            <div class="form-floating mb-3">
+                                                                <input type="email" class="form-control bg-dark"
+                                                                    id="email" placeholder="name@example.com" />
+                                                                <label for="email">Email address</label>
+                                                            </div>
+                                                            <div class="form-floating">
+                                                                <input type="password" class="form-control bg-dark"
+                                                                    id="password" placeholder="Password" />
+                                                                <label for="password">Password</label>
+                                                            </div>
+                                                            <div class="btn-div">
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- register-form -->
+                                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+                                                aria-labelledby="profile-tab" tabindex="0">
+                                                <div class="register-main-container">
+                                                    <div class="register-form">
+                                                        <div class="heading">
+                                                            <h2>Register</h2>
+                                                        </div>
+                                                        <form class="row g-3">
+                                                            <div class="col-md-6">
+                                                                <label for="name" class="form-label">Name</label>
+                                                                <input type="text" class="form-control" id="name">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="email" class="form-label">Email</label>
+                                                                <input type="email" class="form-control" id="email">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="password1"
+                                                                    class="form-label">Password</label>
+                                                                <input type="password" class="form-control"
+                                                                    id="password1">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="password2" class="form-label">Confirm
+                                                                    Password</label>
+                                                                <input type="password" class="form-control"
+                                                                    id="password2">
+                                                            </div>
+                                                            <div class="col-12 btn-div">
+                                                                <button type="submit"
+                                                                    class="btn btn-success">Register</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </nav>
+        </div>
+        <!-- nav-bar ends -------------------------------------------------->
+
+        <!-- Carousel Div Start--------------------------------------------->
+        <div class="ccc">
+
+            <div class="custom-carousel">
+                <div class="custom-carousel-inner">
+                    <div class="custom-carousel-item active">
+                        <img src="/frontend/images/logos/iPhone-11.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="custom-carousel-item">
+                        <img src="/frontend/images/logos/M1-MacBook-Air.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="custom-carousel-item">
+                        <img src="/frontend/images/logos/iphone-se-iphone-xr.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Carousel Div End ---------------------------------------------->
+        <!-- catagory Div Started ------------------------------------------>
+        <div class="featured-content">
+            <div class="heading">
+                <h3>Top Catageries</h3>
+            </div>
+            <div class="catagory-div">
+                <button class="cat btn btn-dark"><img src="/frontend/images/logos/phone.jpg" alt=""></button>
+                <button class="cat btn btn-dark"><img src="/frontend/images/logos/headphone.jpg" alt=""></button>
+                <button class="cat btn btn-dark"><img src="/frontend/images/logos/laptop.jpg" alt=""></button>
+                <button class="cat btn btn-dark"><img src="/frontend/images/logos/watch.jpg" alt=""></button>
+                <button class="cat btn btn-dark"><img src="/frontend/images/logos/speaker.jpg" alt=""></button>
+                <button class="cat btn btn-dark"><img src="/frontend/images/logos/tv.jpg" alt=""></button>
+                <button class="cat btn btn-dark"><img src="/frontend/images/logos/camera.jpg" alt=""></button>
+                <button class="cat btn btn-dark"><img src="/frontend/images/logos/accessories.jpg" alt=""></button>
+            </div>
+        </div>
+        <!-- catagory div end ---------------------------------------------->
+        <!-- products Div Started ------------------------------------------>
+
+        <!-- product div 1 -->
+        <!-- Apple product ----->
+        <div class="featured-content">
+            <div class="heading">
+                <h3>Apple</h3>
+            </div>
+            <div class="all-products">
+                <!-- row 1 Hilight -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- card 1 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/phones/iphone15.jpg" alt="">
+                        </div> 
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- card-2 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/phones/iphone15 plus.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- row 2  -->
+                <div class="row">
+                    <div class="col-lg-3">
+                        <!-- card 1 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/phones/iphone15Pro.jpg" alt="">
+                        </div> 
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- card-2 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/tab/ipad.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- card-3 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/watch/watchSE.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- card-4 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/headphones/airpodspro2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product div 2 -->
+        <div class="featured-content">
+            <div class="heading">
+                <h3>Android</h3>
+            </div>
+            <div class="all-products">
+                <!-- row 1 Hilight -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- card 1 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/phones/Oppo.jpg" alt="">
+                        </div> 
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- card-2 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/phones/vivo.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- row 2  -->
+                <div class="row">
+                    <div class="col-lg-3">
+                        <!-- card 1 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/phones/nothing2.jpg" alt="">
+                        </div> 
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- card-2 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/phones/oneplus.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- card-3 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/phones/oppo reno.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <!-- card-4 -->
+                        <div class="card mb-3">
+                            <img src="/frontend/images/products/phones/realme.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product div end -->
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
