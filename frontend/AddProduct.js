@@ -13,19 +13,11 @@ const SelecteCategory = () => {
         laptop_display.style = 'display : none'
         tablet_display.style = 'display : none'
         headphone_display.style = 'display : none'
-
-        let phone_brand = document.getElementById('phoneBrand').value;
-        let phone_color = document.getElementById('phoneColor').value;
-        let phone_model = document.getElementById('phoneModel').value;
-        let phone_ram = document.getElementById('phoneRam').value;
-        let phone_storage = document.getElementById('phoneStorage').value;
-        let phone_image = document.getElementById('phoneImage').value;
-        let phone_price = document.getElementById('phonePrice').value; 
     }
     else if (selected === '2') {
+        tablet_display.style = 'display : block'
         phone_display.style = 'display : none'
         laptop_display.style = 'display : none'
-        tablet_display.style = 'display : block'
         headphone_display.style = 'display : none'
 
         let tablet_brand = document.getElementById('tabletImage').value;
@@ -38,8 +30,8 @@ const SelecteCategory = () => {
         let tablet_price = document.getElementById('tabletPrice').value;
     }
     else if (selected === '3') {
-        phone_display.style = 'display : none'
         laptop_display.style = 'display : block'
+        phone_display.style = 'display : none'
         tablet_display.style = 'display : none'
         headphone_display.style = 'display : none'
 
@@ -53,10 +45,10 @@ const SelecteCategory = () => {
         let laptop_price = document.getElementById('laptopPrice').value;
     }
     else if (selected === '4') {
+        headphone_display.style = 'display : block'
         phone_display.style = 'display : none'
         laptop_display.style = 'display : none'
         tablet_display.style = 'display : none'
-        headphone_display.style = 'display : block'
 
         let headphone_brand = document.getElementById('headphoneBrand').value;
         let headphone_driver = document.getElementById('headphoneDriver').value;
@@ -66,5 +58,38 @@ const SelecteCategory = () => {
         let headphone_image = document.getElementById('headphonePrice').value;
         let headphone_price = document.getElementById('headphonePrice').value;
     }
+
+}
+document.getElementById("phoneForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents the default form submission
+    uploadPhone(); // Call your function here
+});
+const uploadPhone = () => {
+    console.log("called")
+    let phone_brand = document.getElementById('phoneBrand').value;
+    let phone_color = document.getElementById('phoneColor').value;
+    let phone_model = document.getElementById('phoneModel').value;
+    let phone_ram = document.getElementById('phoneRam').value;
+    let phone_storage = document.getElementById('phoneStorage').value;
+    // let phone_image = document.getElementById('phoneImage').value;
+    let phone_price = document.getElementById('phonePrice').value;
+    
+    fetch('http://localhost:3000/insertdata/phones',{
+        method:"POST",
+        headers:{
+            "Content-Type" : "application/json"
+        },
+        body:JSON.stringify({
+            brand : phone_brand,
+            color : phone_color,
+            model : phone_model,
+            ram : phone_ram,
+            storage : phone_storage,
+            price : phone_price
+        })
+    }).then((result)=> result.json())
+    .then(result => alert(result.msg))
+    .catch(err=> alert(err))
+    
 
 }

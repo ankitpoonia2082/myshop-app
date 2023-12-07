@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const phoneModel = require("../models/phonemodel");
+
 const { insertPhonesData } = require("../Operations/PhoneOperations");
+const { insertLaptopData } = require("../Operations/LaptopOperations");
+const { insertTabData } = require("../Operations/TabOperation");
+const { insertHeadphoneData } = require("../Operations/HeadphoneOperation");
 
 // creating home page requist
 router.get("/", (req, res) => {
@@ -9,5 +12,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/insertdata/phones", insertPhonesData);
+router.post("/insertdata/tab", insertTabData);
+router.post("/insertdata/laptop", insertLaptopData);
+router.post("/insertdata/headphone", insertHeadphoneData);
 
 module.exports = router;

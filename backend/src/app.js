@@ -3,6 +3,8 @@ const express = require('express')
 const app = express()
 const routeModule = require("../src/router");
 
+const cors = require('cors')
+app.use(cors())
 
 const port = 3000;
 app.use(express.json())

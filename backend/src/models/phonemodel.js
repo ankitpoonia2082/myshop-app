@@ -25,10 +25,10 @@ const phoneSchema = new Schema({
     type: Number,
     required: true,
   },
-  img:{
-    data:Buffer,
-    contentType:String
-  }
+  // img:{
+  //   data:Buffer,
+  //   contentType:String
+  // }
 });
 
 const phoneModel = new model("Phone", phoneSchema);

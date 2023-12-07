@@ -9,17 +9,17 @@ const laptopModel = require("../models/laptopmodel");
       let result;
       products.map(async (data) => {
         try {
-          const phones = new laptopModel(data);
+          const laptop = new laptopModel(data);
           result = await laptop.save();
         } catch (err) {
           throw err
         }
       });
     } else {
-      const phones = new laptopModel(products);
+      const laptop = new laptopModel(products);
       result = await laptop.save();
     }
-    res.send({ msg: "successfully inserted" });
+    res.send({ msg: "Laptop successfully added" });
   } catch (err) {
 
     res.status(400).send(err);
