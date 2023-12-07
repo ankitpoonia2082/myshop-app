@@ -178,6 +178,10 @@ body,
     max-width: 600px;
 }
 
+#add-tablet , #add-headphone , #add-laptop{
+    display: none;
+}
+
 /* .row{
     display: block;
 } */
@@ -185,6 +189,16 @@ body,
     display: flex;
 } */
 /* All Products CSS Ended------------------------------------- */
+
+/* Product upload div Css Start */
+.main-container{
+    background-color: rgb(43, 43, 43);
+    margin: 50px 40px;
+    border: 2px solid gray;
+    border-radius: 20px;
+    padding: 20px;
+}
+/* Product upload div Css End */
 
 
 

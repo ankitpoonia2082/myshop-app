@@ -11,7 +11,7 @@ const phoneSchema = new Schema({
   },
   color: {
     type: String,
-    required: true,
+    default:"Black",
   },
   storage: {
     type: Number,
@@ -25,8 +25,12 @@ const phoneSchema = new Schema({
     type: Number,
     required: true,
   },
+  img:{
+    data:Buffer,
+    contentType:String
+  }
 });
 
-const phoneModel = new model("phones", phoneSchema);
+const phoneModel = new model("Phone", phoneSchema);
 
 module.exports = phoneModel

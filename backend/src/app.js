@@ -1,18 +1,13 @@
-const dbConnection = require("./db")
+const dbConnection = require("./Database/db")
 const express = require('express')
 const app = express()
+const routeModule = require("../src/router");
 
 
 const port = 3000;
+app.use(express.json())
+app.use('/', routeModule);
 
-app.post('/insertData/phones',(req,res)=>{
-    try{
-
-    }
-    catch(err){
-        res.status(400).send(err)
-    }
-})
 
 //? Listining request
 app.listen(port,()=>{

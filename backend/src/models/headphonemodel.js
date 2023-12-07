@@ -23,10 +23,6 @@ const headphoneSchema = new Schema({
     type: String,
     required: true,
   },
-  extraFeatures: {
-    anc:Boolean,
-    eardetaction:Boolean,
-  },
   price: {
     type: Number,
     required: true,

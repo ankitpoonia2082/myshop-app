@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload product</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading mt-4">
+            <h2>---Upload Products---</h2>
+        </div>
+        <div class="cat-select mt-5">
+            <select class="form-select" aria-label="Choose product catagery" id="catagory" onchange="SelecteCategory()">
+                <option value="1">PHONE</option>
+                <option value="2">TAB</option>
+                <option value="3">LAPTOP</option>
+                <option value="4">HEADPHONE</option>
+            </select>
+        </div>
+        <!-- Phone -->
+        <div class="main-container" id="add-phone">
+            <form action="">
+                <div class="heading">
+                    <h2>Add Phone</h2>
+                </div>
+                <!-- Catagory Selector -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="phoneBrand" type="text" class="form-control" placeholder="Brand name"
+                            aria-label="Brand name" required>
+                    </div>
+                </div>
+                <!-- Brand & model -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="phoneColor" type="text" class="form-control" placeholder="Color" aria-label="color"
+                            required>
+                    </div>
+                    <div class="col">
+                        <input id="phoneModel" type="text" class="form-control" placeholder="Model" aria-label="Model"
+                            required>
+                    </div>
+                </div>
+                <!-- RAM & Storage -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="phoneRam" type="number" class="form-control" placeholder="Ram" aria-label="Ram"
+                            required>
+                    </div>
+                    <div class="col">
+                        <input id="phoneStorage" type="number" class="form-control" placeholder="Storage"
+                            aria-label="Storage" required>
+                    </div>
+                </div>
+                <!-- imgFile Selector -->
+                <div class="row mb-3">
+                    <div class="col inputGroup">
+                        <input id="phoneImage" type="file" class="form-control" id="inputGroupFile04"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                    </div>
+                    <div class="col">
+                        <input id="phonePrice" type="number" class="form-control" placeholder="Price" aria-label="Price"
+                            required>
+                    </div>
+                </div>
+                <div class="btn_div">
+                    <button class="btn btn-success" type="submit">Add device</button>
+                </div>
+            </form>
+
+        </div>
+        <!-- Add tab  -->
+        <div class="main-container" id="add-tablet">
+            <form action="">
+                <div class="heading">
+                    <h2>Add tablet</h2>
+                </div>
+                <!-- Catagory Selector -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="tabletBrand" type="text" class="form-control" placeholder="Brand name"
+                            aria-label="Brand name" required>
+                    </div>
+                </div>
+                <!-- Brand & model -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="tabletSize" type="number" class="form-control" placeholder="size" aria-label="size"
+                            required>
+                    </div>
+                    <div class="col">
+                        <input id="tabletModel" type="text" class="form-control" placeholder="Model" aria-label="Model"
+                            required>
+                    </div>
+                </div>
+                <!-- RAM & Storage -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="tabletRam" type="number" class="form-control" placeholder="Ram" aria-label="Ram"
+                            required>
+                    </div>
+                    <div class="col">
+                        <input id="tabletStorage" type="number" class="form-control" placeholder="Storage"
+                            aria-label="Storage" required>
+                    </div>
+                    <div class="col">
+                        <input id="tabletProcesser" type="text" class="form-control" placeholder="Processer"
+                            aria-label="Processer" required>
+                    </div>
+                </div>
+                <!-- imgFile Selector -->
+                <div class="row mb-3">
+                    <div class="col input-group">
+                        <input id="tabletImage" type="file" class="form-control" id="inputGroupFile04"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                    </div>
+                    <div class="col">
+                        <input id="tabletPrice" type="number" class="form-control" placeholder="Price"
+                            aria-label="Price" required>
+                    </div>
+                </div>
+                <div class="btn_div">
+                    <button class="btn btn-success" type="submit">Add device</button>
+                </div>
+            </form>
+
+        </div>
+        <!-- Add Laptop Div -->
+        <div class="main-container" id="add-laptop">
+            <form action="">
+                <div class="heading">
+                    <h2>Add Laptop</h2>
+                </div>
+                <!-- Catagory Selector -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="laptopBrand" type="text" class="form-control" placeholder="Brand name"
+                            aria-label="Brand name" required>
+                    </div>
+                </div>
+                <!-- Brand & model -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="laptopSize" type="number" class="form-control" placeholder="size" aria-label="size"
+                            required>
+                    </div>
+                    <div class="col">
+                        <input id="laptopModel" type="text" class="form-control" placeholder="Model" aria-label="Model"
+                            required>
+                    </div>
+                </div>
+                <!-- RAM & Storage -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="laptopRam" type="number" class="form-control" placeholder="Ram" aria-label="Ram"
+                            required>
+                    </div>
+                    <div class="col">
+                        <input id="laptopStorage" type="number" class="form-control" placeholder="Storage"
+                            aria-label="Storage" required>
+                    </div>
+                    <div class="col">
+                        <input id="laptopProcesser" type="text" class="form-control" placeholder="Processer"
+                            aria-label="Processer" required>
+                    </div>
+                </div>
+                <!-- imgFile Selector -->
+                <div class="row mb-3">
+                    <div class="col input-group">
+                        <input id="laptopImage" type="file" class="form-control" id="inputGroupFile04"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                    </div>
+                    <div class="col">
+                        <input id="laptopPrice" type="number" class="form-control" placeholder="Price"
+                            aria-label="Price" required>
+                    </div>
+                </div>
+                <div class="btn_div">
+                    <button class="btn btn-success" type="submit">Add device</button>
+                </div>
+            </form>
+
+        </div>
+        <!-- Add Headphone Div -->
+        <div class="main-container" id="add-headphone">
+            <form action="">
+                <div class="heading">
+                    <h2>Add Headphone</h2>
+                </div>
+                <!-- Catagory Selector -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="headphoneBrand" type="text" class="form-control" placeholder="Brand name"
+                            aria-label="Brand name" required>
+                    </div>
+                </div>
+                <!-- Brand & model -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="headphoneDriver" type="number" class="form-control" placeholder="Driver Size"
+                            aria-label="driver" required>
+                    </div>
+                    <div class="col">
+                        <input id="headphoneModel" type="text" class="form-control" placeholder="Model"
+                            aria-label="Model" required>
+                    </div>
+                </div>
+                <!-- RAM & Storage -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <input id="headphoneType" type="text" class="form-control" placeholder="Headphone type"
+                            aria-label="type" required>
+                    </div>
+                    <div class="col">
+                        <input id="headphoneBattery" type="number" class="form-control" placeholder="Battery life"
+                            aria-label="battery" required>
+                    </div>
+                </div>
+                <!-- imgFile Selector -->
+                <div class="row mb-3">
+                    <div class="col input-group">
+                        <input id="headphoneImage" type="file" class="form-control" id="inputGroupFile04"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                    </div>
+                    <div class="col">
+                        <input id="headphonePrice" type="number" class="form-control" placeholder="Price"
+                            aria-label="Price" required>
+                    </div>
+                </div>
+                <div class="btn_div">
+                    <button class="btn btn-success" type="submit">Add device</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="AddProduct.js"></script>
+</body>
+
+</html>
