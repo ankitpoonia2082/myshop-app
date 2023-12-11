@@ -11,7 +11,7 @@ const phoneSchema = new Schema({
   },
   color: {
     type: String,
-    default:"Black",
+    default: "Black",
   },
   storage: {
     type: Number,
@@ -25,10 +25,10 @@ const phoneSchema = new Schema({
     type: Number,
     required: true,
   },
-  // img:{
-  //   data:Buffer,
-  //   contentType:String
-  // }
+  img: {
+    required: true,
+    type: String,
+  }
 });
 
 const phoneModel = new model("Phone", phoneSchema);

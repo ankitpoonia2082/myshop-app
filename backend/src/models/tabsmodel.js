@@ -30,6 +30,10 @@ const tabSchema = new Schema({
     type: Number,
     required: true,
   },
+  img: {
+    required: true,
+    type: String,
+  }
 });
 
 const tabModel = new model("tabs", tabSchema);

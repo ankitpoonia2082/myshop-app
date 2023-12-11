@@ -30,6 +30,10 @@ const laptopSchema = new Schema({
     type: Number,
     required: true,
   },
+  img: {
+    required: true,
+    type: String,
+  }
 });
 
 const laptopModel = new model("laptops", laptopSchema);

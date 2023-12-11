@@ -27,6 +27,10 @@ const headphoneSchema = new Schema({
     type: Number,
     required: true,
   },
+  img: {
+    required: true,
+    type: String,
+  }
 });
 
 const headphoneModel = new model("headphones", headphoneSchema);
