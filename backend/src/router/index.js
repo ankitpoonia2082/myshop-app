@@ -20,14 +20,8 @@ router.get("/", (req, res) => {
 router.get("/getphone", async (req, res) => {
   try {
     const phones = await phoneModel.find({});
+    res.send(phones)
     // const result = await phoneModel.find({})
-    if (!phones || phones.length === 0) {
-      return res.status(404).send('Phone not found');
-    }
-    const phone = phones[0];
-    res.set('Content-Type', phone.img.contentType); // Set the correct content type
-    res.send(phone.img.data); // Send the image data as a response
-    // res.send(result)
   }
   catch (err) {
     res.status(400).send(err)

@@ -66,8 +66,8 @@
                 <!-- imgFile Selector -->
                 <div class="row mb-3">
                     <div class="col inputGroup">
-                        <input id="phoneImage" type="file" class="form-control" id="inputGroupFile04"
-                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" >
+                        <input id="phoneImage" type="text" class="form-control" id="inputGroupFile04"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required  placeholder="Image Url here">
                     </div>
                     <div class="col">
                         <input id="phonePrice" type="number" class="form-control" placeholder="Price" aria-label="Price"
@@ -82,7 +82,7 @@
         </div>
         <!-- Add tab  -->
         <div class="main-container" id="add-tablet">
-            <form action="">
+            <form action="" id="tabForm">
                 <div class="heading">
                     <h2>Add tablet</h2>
                 </div>
@@ -122,8 +122,8 @@
                 <!-- imgFile Selector -->
                 <div class="row mb-3">
                     <div class="col input-group">
-                        <input id="tabletImage" type="file" class="form-control" id="inputGroupFile04"
-                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                        <input id="tabletImage" type="text" class="form-control" placeholder="image url" aria-label="tab"
+                        required>
                     </div>
                     <div class="col">
                         <input id="tabletPrice" type="number" class="form-control" placeholder="Price"
@@ -138,7 +138,7 @@
         </div>
         <!-- Add Laptop Div -->
         <div class="main-container" id="add-laptop">
-            <form action="">
+            <form action="" id="laptopForm">
                 <div class="heading">
                     <h2>Add Laptop</h2>
                 </div>
@@ -178,8 +178,8 @@
                 <!-- imgFile Selector -->
                 <div class="row mb-3">
                     <div class="col input-group">
-                        <input id="laptopImage" type="file" class="form-control" id="inputGroupFile04"
-                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                        <input id="laptopImage" type="text"  class="form-control" placeholder="Image URL here" aria-label="url"
+                        required>
                     </div>
                     <div class="col">
                         <input id="laptopPrice" type="number" class="form-control" placeholder="Price"
@@ -194,7 +194,7 @@
         </div>
         <!-- Add Headphone Div -->
         <div class="main-container" id="add-headphone">
-            <form action="">
+            <form action="" id="headphoneForm">
                 <div class="heading">
                     <h2>Add Headphone</h2>
                 </div>
@@ -230,8 +230,8 @@
                 <!-- imgFile Selector -->
                 <div class="row mb-3">
                     <div class="col input-group">
-                        <input id="headphoneImage" type="file" class="form-control" id="inputGroupFile04"
-                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                        <input id="headphoneImage" type="text" class="form-control" placeholder="Image URL here" aria-label="Price"
+                        required>
                     </div>
                     <div class="col">
                         <input id="headphonePrice" type="number" class="form-control" placeholder="Price"
@@ -246,7 +246,7 @@
         </div>
     </div>
 
-    <script src="AddProduct.js"></script>
+    <script src="./AddProduct.js"></script>
 </body>
 
 </html>
