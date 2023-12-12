@@ -200,7 +200,19 @@ body,
 }
 /* Product upload div Css End */
 
-
+.mobile{
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    width: auto;
+}
+.mobile-div{
+    border-radius: 10px;
+    border: 1px solid #fff;
+    margin: 20px;
+    padding: 10px;
+}
 
 /* Media Query CSS for 600px-------------------------------------- */
 
@@ -226,6 +238,13 @@ body,
         width: 100%;
     }
 
-
+    .mobile{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .mobile-div{
+        margin: 15px;
+    }
 
 }

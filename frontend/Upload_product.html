@@ -20,6 +20,7 @@
         <div class="heading mt-4">
             <h2>---Upload Products---</h2>
         </div>
+        <!-- Catogory Selector -->
         <div class="cat-select mt-5">
             <select class="form-select" aria-label="Choose product catagery" id="catagory" onchange="SelecteCategory()">
                 <option value="1">PHONE</option>
@@ -28,9 +29,9 @@
                 <option value="4">HEADPHONE</option>
             </select>
         </div>
-        <!-- Phone -->
+        <!-- Phone Form -->
         <div class="main-container" id="add-phone">
-            <form  id='phoneForm'>
+            <form id='phoneForm'>
                 <div class="heading">
                     <h2>Add Phone</h2>
                 </div>
@@ -63,11 +64,12 @@
                             aria-label="Storage" required>
                     </div>
                 </div>
-                <!-- imgFile Selector -->
+                <!-- imgFile Selector & Price -->
                 <div class="row mb-3">
                     <div class="col inputGroup">
-                        <input id="phoneImage" type="text" class="form-control" id="inputGroupFile04"
-                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required  placeholder="Image Url here">
+                        <input id="phoneImage" type="file" accept=".jpg ,.jpeg,.png" class="form-control"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required
+                            placeholder="Select Image">
                     </div>
                     <div class="col">
                         <input id="phonePrice" type="number" class="form-control" placeholder="Price" aria-label="Price"
@@ -122,8 +124,9 @@
                 <!-- imgFile Selector -->
                 <div class="row mb-3">
                     <div class="col input-group">
-                        <input id="tabletImage" type="text" class="form-control" placeholder="image url" aria-label="tab"
-                        required>
+                            <input id="tabletImage" type="file" accept=".jpg ,.jpeg,.png" class="form-control"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required
+                            placeholder="Select Image">
                     </div>
                     <div class="col">
                         <input id="tabletPrice" type="number" class="form-control" placeholder="Price"
@@ -178,8 +181,9 @@
                 <!-- imgFile Selector -->
                 <div class="row mb-3">
                     <div class="col input-group">
-                        <input id="laptopImage" type="text"  class="form-control" placeholder="Image URL here" aria-label="url"
-                        required>
+                        <input id="laptopImage" type="file" accept=".jpg ,.jpeg,.png" class="form-control"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required
+                            placeholder="Select Image">
                     </div>
                     <div class="col">
                         <input id="laptopPrice" type="number" class="form-control" placeholder="Price"
@@ -230,12 +234,13 @@
                 <!-- imgFile Selector -->
                 <div class="row mb-3">
                     <div class="col input-group">
-                        <input id="headphoneImage" type="text" class="form-control" placeholder="Image URL here" aria-label="Price"
-                        required>
+                        <input id="headphoneImage" type="file" accept=".jpg ,.jpeg,.png" class="form-control"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload" required
+                            placeholder="Select Image">
                     </div>
                     <div class="col">
                         <input id="headphonePrice" type="number" class="form-control" placeholder="Price"
-                            aria-label="Price" required>
+                        aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
                     </div>
                 </div>
                 <div class="btn_div">
