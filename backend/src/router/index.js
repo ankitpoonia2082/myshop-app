@@ -19,6 +19,7 @@ router.get("/", (req, res) => {
   res.send("Home page Request's Responce");
 });
 
+
 //For Getting Phone data from db ------------------------->
 router.get("/getphone", async (req, res) => {
   try {
@@ -62,6 +63,23 @@ router.get("/getheadphone", async (req, res) => {
     res.status(400).send(err)
   }
 });
+
+
+// Data Filteration------------->
+// search Phone by model
+router.get(`/searchphone`,async(req,res)=>{
+  try{
+    let phone = req.query.model
+    const phones = await phoneModel.find({model:phone || {brand:phone} ||{price:phone}});
+    res.send(phones)
+  }
+  catch(err){
+    res.send(`No product found related to ${req.data}`)
+  }
+})
+
+
+
 
 // for Post request ------------------------->
 router.post("/insertdata/phone", insertPhonesData);

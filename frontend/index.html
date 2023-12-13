@@ -165,74 +165,48 @@
         <div class="featured-content">
             <div class="catagory-div">
                 <button class="cat" onclick="getMobiles()"><img src="/frontend/images/logos/phone.jpg" alt=""></button>
-                <button class="cat"><img src="/frontend/images/logos/headphone.jpg" alt=""></button>
-                <button class="cat"><img src="/frontend/images/logos/laptop.jpg" alt=""></button>
-                <button class="cat"><img src="/frontend/images/logos/tablets.jpg" alt=""></button>
+                <button class="cat" onclick="getTabs()"><img src="/frontend/images/logos/tablets.jpg" alt=""></button>
+                <button class="cat" onclick="getlaptop()"><img src="/frontend/images/logos/laptop.jpg" alt=""></button>
+                <button class="cat" onclick="getHeadphone()"><img src="/frontend/images/logos/headphone.jpg" alt=""></button>
             </div>
         </div>
         <!-- catagory div end ---------------------------------------------->
         <!-- products Div Started ------------------------------------------>
 
-        <!-- Apple product ----->
-        <div class="featured-content">
-            <div class="heading">
-                <h3>Apple</h3>
+        <!-- Show all mobile on btn click -->
+        <div class="heading" id="heading"><h1></h1></div>
+        
+        <div class="mobileFeild" id="mobileFeild">
+            <div class="filter" id="filter">
+                <form class="d-flex">
+                    <input id="sphone" class="form-control me-2" type="search" placeholder="Search phone" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" onclick="searchPhone(sphone.value)">Search</button>
+                  </form>
+                  <button class="btn btn-warning">Sort</button>
             </div>
-            <div class="all-products">
-                <!-- row 1 Hilight -->
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                        <!-- card 1 -->
-                        <div class="card mb-3">
-                            <img src="/frontend/images/products/phones/iphone15.jpg" alt="">
-                        </div> 
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <!-- card-2 -->
-                        <div class="card mb-3">
-                            <img src="/frontend/images/products/phones/iphone15 plus.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <!-- row 2  -->
-                <div class="row">
-                    <div class="col-lg-3">
-                        <!-- card 1 -->
-                        <div class="card mb-3">
-                            <img src="/frontend/images/products/phones/iphone15Pro.jpg" alt="">
-                        </div> 
-                    </div>
-                    <div class="col-lg-3">
-                        <!-- card-2 -->
-                        <div class="card mb-3">
-                            <img src="/frontend/images/products/tab/ipad.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <!-- card-3 -->
-                        <div class="card mb-3">
-                            <img src="/frontend/images/products/watch/watchSE.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <!-- card-4 -->
-                        <div class="card mb-3">
-                            <img src="/frontend/images/products/headphones/airpodspro2.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
+            <div class="mobile" id="mobile">
             </div>
         </div>
-        <!-- Show all mobile -->
-    
-        <div class="mobile">
-        </div>
+        
+
+         <!-- Show all tabs on btn click -->
+         <div class="tabs" id="tabs"></div>
+
+         <!-- Show all Laptops on btn click -->
+         <div class="laptops" id="laptops"></div>
+
+         <!-- Show all Headphones on btn click -->
+         <div class="headphones" id="headphones"></div>
         
         <!-- product div end -->
 
     </div>
     <script src="Carousel.js"></script>
-    <script src="./showPhones.js"></script>
+    <script src="./ShowAllProducts/showPhones.js"></script>
+    <script src="./ShowAllProducts/showTabs.js"></script>
+    <script src="./ShowAllProducts/showLaptops.js"></script>
+    <script src="./ShowAllProducts/showHeadphones.js"></script>
+    <script src="./filteredProducts/phoneFilter.js"></script>
 </body>
 
 </html>
