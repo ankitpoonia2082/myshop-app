@@ -164,49 +164,48 @@
         <!-- catagory Div Started ------------------------------------------>
         <div class="featured-content">
             <div class="catagory-div">
-                <button class="cat" onclick="getMobiles()"><img src="/frontend/images/logos/phone.jpg" alt=""></button>
-                <button class="cat" onclick="getTabs()"><img src="/frontend/images/logos/tablets.jpg" alt=""></button>
-                <button class="cat" onclick="getlaptop()"><img src="/frontend/images/logos/laptop.jpg" alt=""></button>
-                <button class="cat" onclick="getHeadphone()"><img src="/frontend/images/logos/headphone.jpg" alt=""></button>
+                <button class="cat" onclick="getProduct('phone')"><img src="/frontend/images/logos/phone.jpg"
+                        alt=""></button>
+                <button class="cat" onclick="getProduct('tab')"><img src="/frontend/images/logos/tablets.jpg"
+                        alt=""></button>
+                <button class="cat" onclick="getProduct('laptop')"><img src="/frontend/images/logos/laptop.jpg"
+                        alt=""></button>
+                <button class="cat" onclick="getProduct('headphone')"><img src="/frontend/images/logos/headphone.jpg"
+                        alt=""></button>
             </div>
         </div>
         <!-- catagory div end ---------------------------------------------->
         <!-- products Div Started ------------------------------------------>
 
-        <!-- Show all mobile on btn click -->
-        <div class="heading" id="heading"><h1></h1></div>
-        
-        <div class="mobileFeild" id="mobileFeild">
-            <div class="filter" id="filter">
-                <form class="d-flex">
-                    <input id="sphone" class="form-control me-2" type="search" placeholder="Search phone" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit" onclick="searchPhone(sphone.value)">Search</button>
-                  </form>
-                  <button class="btn btn-warning">Sort</button>
-            </div>
-            <div class="mobile" id="mobile">
-            </div>
+        <div class="heading" id="heading">
+            <h1></h1>
         </div>
-        
 
-         <!-- Show all tabs on btn click -->
-         <div class="tabs" id="tabs"></div>
+        <div class="mobileFeild" id="mobileFeild">
+            <!-- search and sort function -->
+            <div class="filter" id="filter">
 
-         <!-- Show all Laptops on btn click -->
-         <div class="laptops" id="laptops"></div>
+                <input id="searchQuery" class="form-control me-2" type="search" placeholder="Search device"
+                    aria-label="Search" value="" required>
+                <button class="btn btn-outline-success" id="searchQueryBtn">Search</button>
 
-         <!-- Show all Headphones on btn click -->
-         <div class="headphones" id="headphones"></div>
-        
+                <button class="btn btn-warning" id="SortData">Sort by price</button>
+            </div>
+
+            <!-- Show all mobile on btn click -->
+            <div class="products" id="products">
+            </div>
+
+        </div>
+
+
+
+
         <!-- product div end -->
 
     </div>
     <script src="Carousel.js"></script>
-    <script src="./ShowAllProducts/showPhones.js"></script>
-    <script src="./ShowAllProducts/showTabs.js"></script>
-    <script src="./ShowAllProducts/showLaptops.js"></script>
-    <script src="./ShowAllProducts/showHeadphones.js"></script>
-    <script src="./filteredProducts/phoneFilter.js"></script>
+    <script src="./ShowAllProducts/index.js"></script>
 </body>
 
 </html>

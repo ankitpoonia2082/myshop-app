@@ -65,21 +65,77 @@ router.get("/getheadphone", async (req, res) => {
 });
 
 
-// Data Filteration------------->
+// Data Filteration--------------------------------------------->
 // search Phone by model
 router.get(`/searchphone`,async(req,res)=>{
   try{
-    let phone = req.query.model
-    const phones = await phoneModel.find({model:phone || {brand:phone} ||{price:phone}});
+    let phone = req.query.value
+    const phones = await phoneModel.find({
+      $or: [
+          { model: {'$regex':phone, $options: "i" }},
+          { brand: {'$regex':phone, $options: "i" }},
+      ]
+  });
     res.send(phones)
   }
   catch(err){
-    res.send(`No product found related to ${req.data}`)
+    res.send(err)
   }
 })
 
+// Data Filteration------------->
+// search tablet by model
+router.get(`/searchtab`,async(req,res)=>{
+  try{
+    let tab = req.query.value
+    const tabs = await tabModel.find({
+      $or: [
+          { model: {'$regex':tab, $options: "i" }},
+          { brand: {'$regex':tab, $options: "i" }},
+      ]
+  });
+    res.send(tabs)
+  }
+  catch(err){
+    res.send(err)
+  }
+})
 
+// Data Filteration------------->
+// search laptop by model
+router.get(`/searchlaptop`,async(req,res)=>{
+  try{
+    let laptop = req.query.value
+    const laptops = await laptopModel.find({
+      $or: [
+          { model: {'$regex':laptop, $options: "i" }},
+          { brand: {'$regex':laptop, $options: "i" }},
+      ]
+  });
+    res.send(laptops)
+  }
+  catch(err){
+    res.send(err)
+  }
+})
 
+// Data Filteration------------->
+// search headphone by model
+router.get(`/searchheadphone`,async(req,res)=>{
+  try{
+    let headphone = req.query.value
+    const headphones = await headphoneModel.find({
+      $or: [
+          { model: {'$regex':headphone, $options: "i" }},
+          { brand: {'$regex':headphone, $options: "i" }},
+      ]
+  });
+    res.send(headphones)
+  }
+  catch(err){
+    res.send(err)
+  }
+})
 
 // for Post request ------------------------->
 router.post("/insertdata/phone", insertPhonesData);

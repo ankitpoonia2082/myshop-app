@@ -141,22 +141,16 @@ body,
     border: 1px solid gray;
     border-radius: 20px;
 }
-
 .catagory-div {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
 }
-
 .catagory-div button {
     background-color: transparent;
     margin: 20px auto;
     border: none;
-    /* border: 2px solid gray; */
-    /* border-radius: 30px; */
-    /* padding-top: 20px; */
 }
-
 .cat img {
     object-fit: cover;
     max-width: 100%;
@@ -165,26 +159,10 @@ body,
 
 /* catagory-div CSS Ended */
 
-/* All Products CSS Started------------------------------------- */
-.all-products {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.card {
-    margin: 10px;
-    max-width: 600px;
-}
-
+/* Product upload div Css Start ------------------------------*/
 #add-tablet , #add-headphone , #add-laptop{
     display: none;
 }
-
-/* All Products CSS Ended------------------------------------- */
-
-/* Product upload div Css Start */
 .main-container{
     background-color: rgb(43, 43, 43);
     margin: 50px 40px;
@@ -195,58 +173,67 @@ body,
 #product-type{
     display: none;
 }
-/* Product upload div Css End */
-#mobileFeild , #tabs, #laptops, #headphones {
-    border: 2px solid #fff;
+/* Product upload div Css End ---------------------------------*/
+#mobileFeild{
+    margin: 10px;
+    border: 1px solid #fff;
     border-radius: 20px;
     display:none;
+    padding: 10px;
+}
+#heading{
+    display:none;
+}
+#products, #tabs, #laptops, #headphones {
+    border-top: 1px solid #fff;
+    display:none;
+    padding: 20px;
 }
 #filter{
     display: flex;
-    padding: 20px;
-    justify-content: space-between;
-    border-bottom: 2px solid #fff;
+    justify-content: space-around;
     margin: 30px;
 }
-.mobile ,.tabs ,.laptops, .headphones{
-    padding: 20px;
+
+.products{
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 20px;
     justify-content: center;
     align-items: center;
-    width: auto;
 }
-.mobile-div ,.tab-div ,.laptop-div ,.headphone-div {
+.product-div {
+    width: 300px;
+    height: 350px;
     text-align: center;
     color: #fff;
-    width: 300px;
-    border-radius: 10px;
     border: 1px solid #fff;
+    border-radius: 10px;
     margin: 20px;
     padding: 10px;
+    cursor: pointer;
 }
-.mobile-div img,.tab-div img ,.laptop-div img,.headphone-div img{
-    width: 280px;
+.product-div img{
+    width: 98%;
     height: 200px;
+    object-fit:contain;
     border-radius: 10px;
-    border: 1px solid #fff;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
 }
 
 /* Media Query CSS for 600px-------------------------------------- */
-
 @media screen and (max-width: 600px) {
-
     /* Login Form media query */
     .login-register {
         margin: 10px;
     }
-
     .tab-content,
     .nav {
         width: 95%;
         padding: 10px;
     }
-
     .login-form,
     .register-form {
         width: 100%;
@@ -256,15 +243,18 @@ body,
         width: 100%;
     }
 
-    .mobile ,.tabs ,.laptops, .headphones{
+    .products{
         flex-direction: column;
     }
-    .mobile-div ,.tab-div ,.laptop-div ,.headphone-div {
+    #products{
+        padding: 0px;
+    }
+    .product-div {
         width: auto;
         margin: 20px;
         padding: 10px;
     }
-    .mobile-div img,.tab-div img ,.laptop-div img,.headphone-div img{
+    .product-div img{
         width: 350px;
         height: 200px;
     }
