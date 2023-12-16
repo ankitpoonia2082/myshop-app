@@ -1,5 +1,3 @@
-
-
 // Getting display properties of all add product form
 let phone_display = document.getElementById('add-phone')
 let laptop_display = document.getElementById('add-laptop')
