@@ -1,11 +1,75 @@
 let ProductData = []  // To store data getting from API
 let productType;      // getting string from function
+// Updating Product
+const updateProduct = (data) => {
+    const fullScreen = document.getElementById('offcanvasBody');
+    fullScreen.replaceChildren(); // Remove privious elements 
+    const productdivFull = document.createElement('div')
+    const model = document.createElement('input')
+    model.setAttribute('id', 'modelId')
+    const price = document.createElement('input')
+    price.setAttribute('id', 'priceId')
+    const update = document.createElement('button')
 
+    model.value = data?.model;
+    price.value = data?.price;
+    update.textContent = "update";
+
+    productdivFull.appendChild(model)
+    productdivFull.appendChild(price)
+    productdivFull.appendChild(update)
+    fullScreen.appendChild(productdivFull)
+
+    update.addEventListener('click', (event) => {
+        const modelValue = document.getElementById('modelId').value
+        const priceValue = document.getElementById('priceId').value
+        const id = data._id
+        newData = { productType, id, modelValue, priceValue }
+        fetch(`http://localhost:3000/update`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newData),
+        }).then(result => result.json())
+            .then(result => {
+                console.log(result)
+                alert(result)
+            })
+            .catch(err => {
+                console.log(err.message)
+                alert(err)
+            });
+    })
+}
+// for deleting product
+const deleteProduct = (data) => {
+    const fullScreen = document.getElementById('offcanvasBody');
+    let id = data._id
+    let newData = { id, productType }
+    fetch('http://localhost:3000/delete', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newData)
+    })
+        .then((result) => result.json())
+        .then((result) => {
+            console.log(result)
+            fullScreen.replaceChildren();
+            let msg = document.createElement("h2");
+            msg.textContent = "Deleted Successfully"
+            fullScreen.appendChild(msg)
+            getProduct(productType)
+            alert(result)
+        }).catch(err => console.log(err))
+}
+// To view all details of product ---------------------->
 const productFullScreen = (deviceData) => {
-    // console.log(deviceData)
     const data = deviceData;
     const fullScreen = document.getElementById('offcanvasBody');
-    fullScreen.replaceChildren();
+    fullScreen.replaceChildren(); // Remove privious elements 
     const productdivFull = document.createElement('div')
     const fullImage = document.createElement('img')
     const brand = document.createElement('h3')
@@ -16,6 +80,8 @@ const productFullScreen = (deviceData) => {
     const screenSize = document.createElement('p')
     const processer = document.createElement('p')
     const price = document.createElement('p')
+    const updateBtn = document.createElement('button')
+    const deleteBtn = document.createElement('button')
 
     fullImage.src = data?.img;
     brand.textContent = `Brand : ${data?.brand}`;
@@ -26,6 +92,9 @@ const productFullScreen = (deviceData) => {
     screenSize.textContent = `Screen Size : ${data?.screenSize}`;
     processer.textContent = `Processer : ${data?.processer}`;
     color.textContent = `Color : ${data?.color}`;
+
+    updateBtn.textContent = "Update"
+    deleteBtn.textContent = "delete"
 
     fullImage.classList.add('img-fluid');
     productdivFull.classList.add('product-div-full');
@@ -39,10 +108,18 @@ const productFullScreen = (deviceData) => {
     productdivFull.appendChild(screenSize)
     productdivFull.appendChild(processer)
     productdivFull.appendChild(price)
+    productdivFull.appendChild(updateBtn)
+    productdivFull.appendChild(deleteBtn)
     fullScreen.appendChild(productdivFull)
 
-    const toggleButton = document.getElementById('toggleButton').click()
+    updateBtn.addEventListener('click', (event) => {
+        updateProduct(data)
+    })
+    deleteBtn.addEventListener('click', (event) => {
+        deleteProduct(data)
+    })
 
+    const toggleButton = document.getElementById('toggleButton').click()
 }
 // To Show products ------------------------------------>
 const showProducts = (products, type) => {
@@ -105,15 +182,12 @@ const SearchProduct = (data, productType) => {
 // To get All products of a catagory on btn click ------>
 const getProduct = (type) => {
     productType = type
-
     fetch(`http://localhost:3000/get${type}`)
         .then((data) => data.json())
         .then((data) => {
             ProductData = data;
             showProducts(data, type);
-
         }).catch(err => console.log(err))
-
 }
 //data sorting by price -------------------------------->
 const sortData = () => {
@@ -122,7 +196,7 @@ const sortData = () => {
         showProducts(ProductData, productType)
     }
 }
-// Show products on getting from all collections afer searching
+// Show data from all collections afer searching-------->
 const showAllProducts = (products) => {
     let container = document.getElementById('ShowAllProducts')
     container.style.display = 'block'
@@ -146,16 +220,14 @@ const showAllProducts = (products) => {
         productdiv.appendChild(model)
         productdiv.appendChild(price)
         container.appendChild(productdiv)
-
-
     })
 }
 const SearchFromProduct = (data, productType) => {
     const find = data
-   return  fetch(`http://localhost:3000/search${productType}?value=${find}`)
+    return fetch(`http://localhost:3000/search${productType}?value=${find}`)
         .then((data) => data.json())
         .then((data) => {
-           return data
+            return data
         }).catch(err => console.log(err))
 }
 // Find Product from all catagory ---------------------->
@@ -167,7 +239,7 @@ const findProducts = async (findAll) => {
         laptops: await SearchFromProduct(find, "laptop"),
         headphone: await SearchFromProduct(find, "headphone")
     }
-    AllData =[...data.phones , ...data.tabs , ...data.laptops , ...data.headphone]
+    AllData = [...data.phones, ...data.tabs, ...data.laptops, ...data.headphone]
     showProducts(AllData)
 }
 

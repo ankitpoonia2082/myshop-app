@@ -4,7 +4,6 @@ let laptop_display = document.getElementById('add-laptop')
 let tablet_display = document.getElementById('add-tablet')
 let headphone_display = document.getElementById('add-headphone')
 
-
 // Function for selecting which product we want to add
 const SelecteCategory = () => {
     let selected = document.getElementById('catagory').value;
@@ -35,33 +34,26 @@ const SelecteCategory = () => {
         tablet_display.style = 'display : none'
     }
 }
-
 // Adding event on  Phone form---->
 document.getElementById("phoneForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevents the default form submission
     uploadPhone(); // Called function here
 });
-
 // Adding event on  tablets form------>
 document.getElementById('tabForm').addEventListener('submit', function (event) {
     event.preventDefault();
     uploadTab();
 })
-
 // Adding event on  laptop form------>
 document.getElementById('laptopForm').addEventListener('submit', function (event) {
     event.preventDefault();
     uploadLaptop();
 })
-
 // Adding event on  headphone form------>
 document.getElementById('headphoneForm').addEventListener('submit', function (event) {
     event.preventDefault();
     uploadHeadphone();
 })
-
-
-
 // Sending Phone form data to api
 const uploadPhone = () => {
     let phone_brand = document.getElementById('phoneBrand').value;
@@ -76,7 +68,6 @@ const uploadPhone = () => {
         var reader = new FileReader()
         reader.onload = function (e) {
             var base64Image = e.target.result;
-
             const data = {
                 brand: phone_brand,
                 color: phone_color,
@@ -99,7 +90,6 @@ const uploadPhone = () => {
         reader.readAsDataURL(phone_image);
     }
 }
-
 // Sending Tablet form data to api
 const uploadTab = () => {
     let tab_brand = document.getElementById('tabletBrand').value;
@@ -140,7 +130,6 @@ const uploadTab = () => {
         reader.readAsDataURL(tab_image);
     }
 }
-
 // Sending Laptop form data to api
 const uploadLaptop = () => {
     let laptop_brand = document.getElementById('laptopBrand').value;
@@ -181,7 +170,6 @@ const uploadLaptop = () => {
         reader.readAsDataURL(laptop_image);
     }
 }
-
 // Sending headphone form data to api
 const uploadHeadphone = () => {
     let headphone_brand = document.getElementById('headphoneBrand').value;

@@ -229,7 +229,25 @@ body,
 #offcanvasBody{
     background:rgb(30, 30, 30);
     color: #fff;
+    padding: 10px;
 }
+#offcanvasBody button{
+    width: 90px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+}
+#offcanvasBody input{
+    background-color: black;
+    color: #fff;
+    width: 90%;
+    height:25px;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
 #toggleButton{
     display: none;
 }

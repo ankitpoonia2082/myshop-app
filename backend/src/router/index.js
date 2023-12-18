@@ -13,13 +13,14 @@ const tabModel = require("../models/tabsmodel");
 const laptopModel = require("../models/laptopmodel");
 const headphoneModel = require("../models/headphonemodel");
 const registerModel = require("../models/registerModel");
+const { ObjectId } = require("mongodb");
 
 // creating home page requist
 router.get("/", (req, res) => {
   res.send("Home page Request's Responce");
 });
 
-//For Getting Phone data from db ------------------------->
+//For Getting Phone data from db ----------------------------->
 router.get("/getphone", async (req, res) => {
   try {
     const phones = await phoneModel.find({});
@@ -29,8 +30,7 @@ router.get("/getphone", async (req, res) => {
     res.status(400).send(err)
   }
 });
-
-//For Getting tablet data from db ------------------------->
+//For Getting tablet data from db ---------------------------->
 router.get("/gettab", async (req, res) => {
   try {
     const tabs = await tabModel.find({});
@@ -40,8 +40,7 @@ router.get("/gettab", async (req, res) => {
     res.status(400).send(err)
   }
 });
-
-//For Getting laptop data from db ------------------------->
+//For Getting laptop data from db ---------------------------->
 router.get("/getlaptop", async (req, res) => {
   try {
     const laptops = await laptopModel.find({});
@@ -51,7 +50,6 @@ router.get("/getlaptop", async (req, res) => {
     res.status(400).send(err)
   }
 });
-
 //For Getting headphone data from db ------------------------->
 router.get("/getheadphone", async (req, res) => {
   try {
@@ -63,9 +61,8 @@ router.get("/getheadphone", async (req, res) => {
   }
 });
 
-
-// Data Filteration--------------------------------------------->
-// search Phone by model
+// Data Filteration------------------------------------------->
+// search Phone
 router.get(`/searchphone`, async (req, res) => {
   try {
     let phone = req.query.value
@@ -81,9 +78,7 @@ router.get(`/searchphone`, async (req, res) => {
     res.send(err)
   }
 })
-
-// Data Filteration------------->
-// search tablet by model
+// search tablet
 router.get(`/searchtab`, async (req, res) => {
   try {
     let tab = req.query.value
@@ -99,9 +94,7 @@ router.get(`/searchtab`, async (req, res) => {
     res.send(err)
   }
 })
-
-// Data Filteration------------->
-// search laptop by model
+// search laptop
 router.get(`/searchlaptop`, async (req, res) => {
   try {
     let laptop = req.query.value
@@ -117,10 +110,7 @@ router.get(`/searchlaptop`, async (req, res) => {
     res.send(err)
   }
 })
-
-// Data Filteration / Finding Data------------->
-
-// search headphone by model
+// search headphone
 router.get(`/searchheadphone`, async (req, res) => {
   try {
     let headphone = req.query.value
@@ -142,11 +132,7 @@ router.post("/insertdata/phone", insertPhonesData);
 router.post("/insertdata/tab", insertTabData);
 router.post("/insertdata/laptop", insertLaptopData);
 router.post("/insertdata/headphone", insertHeadphoneData);
-
-// User Registration(POST)
 router.post("/insertdata/register", registerUser);
-
-// user Login
 router.post(`/login`, async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -162,5 +148,57 @@ router.post(`/login`, async (req, res) => {
     res.status(500).send('Server Error');
   }
 })
+// Update Product--------------------------------->
+router.post(`/update`, async (req, res) => {
+  try {
+    let productType = req.body.productType;
+    let id = req.body.id;
+    let price = Number(req.body.priceValue)
+    let model = req.body.modelValue;
+    let SearchModel;
+    if (productType === "phone") { SearchModel = phoneModel }
+    else if (productType === "tab") { SearchModel = tabModel }
+    else if (productType === "laptop") { SearchModel = laptopModel }
+    else if (productType === "headphone") { SearchModel = headphoneModel }
+
+    const details = await SearchModel.updateOne({ _id: id }, { $set: { model: model, price: price } });
+    if (details && details.modifiedCount > 0) {
+      console.log('Update successful:', details);
+      res.json('update successfully');
+    } else {
+      res.status(404).send('Update failed, no document modified');
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+})
+
+//Delete product
+router.post("/delete", async (req, res) => {
+  try {
+    let id = req.body.id;
+    let productType = req.body.productType;
+    let SearchModel;
+
+    if (productType === "phone") { SearchModel = phoneModel }
+    else if (productType === "tab") { SearchModel = tabModel }
+    else if (productType === "laptop") { SearchModel = laptopModel }
+    else if (productType === "headphone") { SearchModel = headphoneModel }
+
+    const deletedProduct = await SearchModel.deleteOne({ _id: id })
+    if (deletedProduct && deletedProduct.deletedCount> 0) {
+      console.log('deleted successful:', deletedProduct);
+      res.json('delete successfully');
+    } else {
+      res.status(404).send('failed to delete');
+    }
+  }
+  catch(err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+})
+
 
 module.exports = router;
